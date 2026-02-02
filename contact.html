@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | The Full Time Hobby</title>
+    <meta name="description" content="Get in touch with Jeremy Allen for photography and videography inquiries.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">THE FULL TIME HOBBY</a>
+            <button class="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="booking.html">Book</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h1>Get In Touch</h1>
+                    <p>Have a question or want to work together? Fill out the form or reach out directly — I'd love to hear from you.</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <h4>Email</h4>
+                            <a href="mailto:hello@thefulltimehobby.com">hello@thefulltimehobby.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Phone</h4>
+                            <a href="tel:+15149189438">514-918-9438</a>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Location</h4>
+                            <p>Squamish, British Columbia</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Social</h4>
+                            <a href="https://instagram.com/thefulltimehobby" target="_blank" rel="noopener">@thefulltimehobby</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--
+                ===========================================
+                FORM SETUP OPTIONS:
+                ===========================================
+                Option 1: Formspree (free tier: 50 submissions/month)
+                - Sign up at formspree.io
+                - Create a form and get your form ID
+                - Replace YOUR_FORM_ID below
+
+                Option 2: Netlify Forms (free with Netlify hosting)
+                - Add netlify attribute to form
+                - <form name="contact" netlify>
+
+                Option 3: Getform, Basin, or similar services
+                ===========================================
+                -->
+
+                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="project">Project Type</label>
+                        <select id="project" name="project">
+                            <option value="">Select a service...</option>
+                            <option value="commercial">Commercial Photography</option>
+                            <option value="action">Action Sports</option>
+                            <option value="lifestyle">Lifestyle & Portrait</option>
+                            <option value="video">Video Production</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>The Full Time Hobby</h3>
+                    <p>Squamish, British Columbia</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="work.html">Work</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="booking.html">Book</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://instagram.com/thefulltimehobby" target="_blank" rel="noopener">Instagram</a>
+                        <a href="mailto:hello@thefulltimehobby.com">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 The Full Time Hobby. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
