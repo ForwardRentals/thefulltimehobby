@@ -629,6 +629,33 @@ ul {
     transform: scale(1.05);
 }
 
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    transform: translateY(100%);
+    transition: transform var(--transition-normal);
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    transform: translateY(0);
+}
+
+.portfolio-overlay h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--color-text);
+}
+
+.portfolio-overlay p {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+}
+
 /* ===========================================
    About Page
    =========================================== */

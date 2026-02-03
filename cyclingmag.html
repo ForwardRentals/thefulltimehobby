@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canadian Cycling Magazine | The Full Time Hobby</title>
+    <meta name="description" content="Photography for Canadian Cycling Magazine editorial feature.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">THE FULL TIME HOBBY</a>
+            <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="work.html" class="active">Work</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="gallery-header">
+        <div class="container">
+            <a href="work.html" class="back-link">&larr; Back to Work</a>
+            <h1>Canadian Cycling Magazine</h1>
+            <p class="gallery-meta">Editorial Feature</p>
+        </div>
+    </header>
+
+    <section class="gallery">
+        <div class="container">
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)"><img src="images/galleries/cyclingmag/01.jpg" alt="Canadian Cycling Magazine"></div>
+                <div class="gallery-item" onclick="openLightbox(1)"><img src="images/galleries/cyclingmag/02.jpg" alt="Canadian Cycling Magazine"></div>
+                <div class="gallery-item" onclick="openLightbox(2)"><img src="images/galleries/cyclingmag/03.jpg" alt="Canadian Cycling Magazine"></div>
+                <div class="gallery-item" onclick="openLightbox(3)"><img src="images/galleries/cyclingmag/04.jpg" alt="Canadian Cycling Magazine"></div>
+                <div class="gallery-item" onclick="openLightbox(4)"><img src="images/galleries/cyclingmag/05.jpg" alt="Canadian Cycling Magazine"></div>
+                <div class="gallery-item" onclick="openLightbox(5)"><img src="images/galleries/cyclingmag/06.jpg" alt="Canadian Cycling Magazine"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="lightbox-next" onclick="changeSlide(1)">&#10095;</button>
+        <div class="lightbox-content"><img id="lightbox-img" src="" alt=""></div>
+        <div class="lightbox-counter"><span id="lightbox-current">1</span> / <span id="lightbox-total">6</span></div>
+    </div>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Interested in Similar Work?</h2>
+            <p>Let's discuss your next editorial or magazine project.</p>
+            <a href="contact.html" class="btn btn-primary btn-large">Get In Touch</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><h3>The Full Time Hobby</h3><p>Squamish, British Columbia</p></div>
+                <div class="footer-links"><h4>Navigation</h4><ul><li><a href="work.html">Work</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+                <div class="footer-social"><h4>Connect</h4><div class="social-links"><a href="https://instagram.com/thefulltimehobby" target="_blank" rel="noopener">Instagram</a><a href="mailto:hello@thefulltimehobby.com">Email</a></div></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2024 The Full Time Hobby. All rights reserved.</p></div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="js/gallery.js"></script>
+</body>
+</html>
