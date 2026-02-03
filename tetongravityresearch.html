@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teton Gravity Research | The Full Time Hobby</title>
+    <meta name="description" content="Photography from Teton Gravity Research Magic Hour Winter 2022.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">THE FULL TIME HOBBY</a>
+            <button class="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="work.html" class="active">Work</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Gallery Header -->
+    <header class="gallery-header">
+        <div class="container">
+            <a href="work.html" class="back-link">&larr; Back to Work</a>
+            <h1>Teton Gravity Research</h1>
+            <p class="gallery-meta">Magic Hour — Winter 2022</p>
+        </div>
+    </header>
+
+    <!-- Gallery Grid -->
+    <section class="gallery">
+        <div class="container">
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="images/galleries/tetongravityresearch/01.jpg" alt="Teton Gravity Research">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="images/galleries/tetongravityresearch/02.jpg" alt="Teton Gravity Research">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="images/galleries/tetongravityresearch/03.jpg" alt="Teton Gravity Research">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="images/galleries/tetongravityresearch/04.jpg" alt="Teton Gravity Research">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="images/galleries/tetongravityresearch/05.jpg" alt="Teton Gravity Research">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="images/galleries/tetongravityresearch/06.jpg" alt="Teton Gravity Research">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(6)">
+                    <img src="images/galleries/tetongravityresearch/07.jpg" alt="Teton Gravity Research">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(7)">
+                    <img src="images/galleries/tetongravityresearch/08.jpg" alt="Teton Gravity Research">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(8)">
+                    <img src="images/galleries/tetongravityresearch/09.jpg" alt="Teton Gravity Research">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(9)">
+                    <img src="images/galleries/tetongravityresearch/10.jpg" alt="Teton Gravity Research">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(10)">
+                    <img src="images/galleries/tetongravityresearch/11.jpg" alt="Teton Gravity Research">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(11)">
+                    <img src="images/galleries/tetongravityresearch/12.jpg" alt="Teton Gravity Research">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="lightbox-next" onclick="changeSlide(1)">&#10095;</button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+        </div>
+        <div class="lightbox-counter">
+            <span id="lightbox-current">1</span> / <span id="lightbox-total">12</span>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Interested in Similar Work?</h2>
+            <p>Let's discuss your next action sports or commercial project.</p>
+            <a href="contact.html" class="btn btn-primary btn-large">Book a Session</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>The Full Time Hobby</h3>
+                    <p>Squamish, British Columbia</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="work.html">Work</a></li>
+                        <li><a href="about.html">About</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://instagram.com/thefulltimehobby" target="_blank" rel="noopener">Instagram</a>
+                        <a href="mailto:hello@thefulltimehobby.com">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 The Full Time Hobby. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/gallery.js"></script>
+</body>
+</html>
