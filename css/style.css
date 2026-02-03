@@ -158,7 +158,8 @@ ul {
     overflow: hidden;
 }
 
-.hero-video-container {
+/* Hero Slideshow */
+.hero-slideshow {
     position: absolute;
     top: 0;
     left: 0;
@@ -166,10 +167,31 @@ ul {
     height: 100%;
 }
 
-.hero-video {
+.hero-slideshow .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    transform: scale(1);
+}
+
+.hero-slideshow .slide.active {
+    opacity: 1;
+    animation: kenBurns 8s ease-in-out forwards;
+}
+
+@keyframes kenBurns {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.08);
+    }
 }
 
 .hero-overlay {
@@ -180,17 +202,11 @@ ul {
     height: 100%;
     background: linear-gradient(
         to bottom,
-        rgba(10, 10, 10, 0.4) 0%,
-        rgba(10, 10, 10, 0.6) 50%,
-        rgba(10, 10, 10, 0.9) 100%
+        rgba(10, 10, 10, 0.3) 0%,
+        rgba(10, 10, 10, 0.5) 50%,
+        rgba(10, 10, 10, 0.85) 100%
     );
-}
-
-/* Fallback background when no video */
-.hero-video-container:not(:has(video[src])),
-.hero-video:not([src]),
-.hero-video[src=""] {
-    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    z-index: 1;
 }
 
 .hero-content {
