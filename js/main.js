@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fade in animations on scroll
     initScrollAnimations();
+
+    // Stats counter animation
+    initStatsCounter();
 });
 
 // Hero Slideshow
@@ -182,6 +185,53 @@ function initContactForm() {
             submitBtn.disabled = false;
             alert('There was an error sending your message. Please try again or email directly.');
         }
+    });
+}
+
+// Stats counter animation
+function initStatsCounter() {
+    const counters = document.querySelectorAll('.counter');
+    if (!counters.length) return;
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5
+    };
+
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = parseInt(counter.dataset.target);
+                const duration = 2000; // 2 seconds
+                const startTime = performance.now();
+
+                function updateCounter(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+
+                    // Easing function for smooth animation
+                    const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                    const currentValue = Math.floor(easeOutQuart * target);
+
+                    counter.textContent = currentValue.toLocaleString();
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target.toLocaleString();
+                    }
+                }
+
+                requestAnimationFrame(updateCounter);
+                counterObserver.unobserve(counter);
+            }
+        });
+    }, observerOptions);
+
+    counters.forEach(counter => {
+        counterObserver.observe(counter);
     });
 }
 
