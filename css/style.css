@@ -520,6 +520,68 @@ ul {
 }
 
 /* ===========================================
+   Fine Art Gallery Section
+   =========================================== */
+.fine-art-gallery {
+    padding: 6rem 0;
+    background-color: var(--color-bg);
+}
+
+.fine-art-gallery .section-subtitle {
+    text-align: center;
+    color: var(--color-text-muted);
+    margin-top: -1rem;
+    margin-bottom: 3rem;
+}
+
+.fine-art-gallery .section-subtitle a {
+    color: var(--color-text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.fine-art-gallery .section-subtitle a:hover {
+    color: var(--color-text-muted);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-medium), filter var(--transition-fast);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+@media (max-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===========================================
    Stats Counter Section
    =========================================== */
 .stats-section {
