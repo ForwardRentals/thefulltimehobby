@@ -193,6 +193,9 @@ function initStatsCounter() {
     const counters = document.querySelectorAll('.counter');
     if (!counters.length) return;
 
+    // Different durations for each counter so they finish at different times
+    const durations = [2800, 3500, 4200, 3100];
+
     const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -204,7 +207,8 @@ function initStatsCounter() {
             if (entry.isIntersecting) {
                 const counter = entry.target;
                 const target = parseInt(counter.dataset.target);
-                const duration = 3500; // 3.5 seconds for slower count
+                const index = Array.from(counters).indexOf(counter);
+                const duration = durations[index] || 3500;
                 const startTime = performance.now();
 
                 function updateCounter(currentTime) {
