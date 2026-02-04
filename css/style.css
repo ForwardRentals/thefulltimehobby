@@ -479,10 +479,35 @@ ul {
     filter: grayscale(0%) brightness(1) sepia(100%) hue-rotate(150deg) saturate(3);
 }
 
+/* For logos with white backgrounds - invert to make them work on dark bg */
+.client-logo-img.invert-logo img {
+    filter: invert(1);
+}
+
+.client-logo-img.invert-logo {
+    filter: grayscale(100%) brightness(1);
+}
+
+.client-logo-img.invert-logo:hover {
+    filter: grayscale(0%) brightness(1);
+}
+
+.client-logo-img.invert-logo.tint-orange:hover img {
+    filter: invert(1) sepia(100%) hue-rotate(0deg) saturate(3);
+}
+
 .client-logo-img img {
     max-width: 140px;
     max-height: 60px;
     object-fit: contain;
+}
+
+.additional-brands {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    margin-top: 2rem;
+    letter-spacing: 0.05em;
 }
 
 /* Fallback grid for no-JS */
