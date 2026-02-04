@@ -204,7 +204,7 @@ function initStatsCounter() {
             if (entry.isIntersecting) {
                 const counter = entry.target;
                 const target = parseInt(counter.dataset.target);
-                const duration = 2000; // 2 seconds
+                const duration = 3500; // 3.5 seconds for slower count
                 const startTime = performance.now();
 
                 function updateCounter(currentTime) {

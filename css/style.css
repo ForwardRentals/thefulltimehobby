@@ -446,11 +446,37 @@ ul {
     opacity: 0.5;
     transition: opacity var(--transition-fast), filter var(--transition-fast);
     filter: grayscale(100%) brightness(1.8);
+    cursor: pointer;
 }
 
 .client-logo-img:hover {
     opacity: 1;
     filter: grayscale(0%) brightness(1);
+}
+
+/* Color tints for different logos on hover */
+.client-logo-img.tint-red:hover {
+    filter: grayscale(0%) brightness(1) sepia(100%) hue-rotate(-20deg) saturate(3);
+}
+
+.client-logo-img.tint-blue:hover {
+    filter: grayscale(0%) brightness(1) sepia(100%) hue-rotate(180deg) saturate(3);
+}
+
+.client-logo-img.tint-green:hover {
+    filter: grayscale(0%) brightness(1) sepia(100%) hue-rotate(90deg) saturate(3);
+}
+
+.client-logo-img.tint-purple:hover {
+    filter: grayscale(0%) brightness(1) sepia(100%) hue-rotate(230deg) saturate(3);
+}
+
+.client-logo-img.tint-orange:hover {
+    filter: grayscale(0%) brightness(1) sepia(100%) hue-rotate(0deg) saturate(3);
+}
+
+.client-logo-img.tint-cyan:hover {
+    filter: grayscale(0%) brightness(1) sepia(100%) hue-rotate(150deg) saturate(3);
 }
 
 .client-logo-img img {
