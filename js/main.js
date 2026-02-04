@@ -26,29 +26,115 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Stats counter animation
     initStatsCounter();
+
+    // Parallax effects
+    initParallax();
+
+    // Text reveal animation
+    initTextReveal();
+
+    // Magnetic hover effect on buttons
+    initMagneticButtons();
+
+    // Image tilt effect on gallery
+    initImageTilt();
 });
 
-// Hero Slideshow
+// Hero Slideshow with smooth transitions
 function initHeroSlideshow() {
     const slides = document.querySelectorAll('.hero-slideshow .slide');
     if (slides.length === 0) return;
 
     let currentSlide = 0;
-    const slideInterval = 6000; // 6 seconds per slide
+    const slideInterval = 7000; // 7 seconds per slide
 
     function nextSlide() {
-        // Remove active class from current slide
-        slides[currentSlide].classList.remove('active');
+        const prevSlide = currentSlide;
 
         // Move to next slide
         currentSlide = (currentSlide + 1) % slides.length;
 
-        // Add active class to new slide
+        // Add active class to new slide first (crossfade)
         slides[currentSlide].classList.add('active');
+
+        // Remove active from previous slide after brief delay
+        setTimeout(() => {
+            slides[prevSlide].classList.remove('active');
+        }, 100);
     }
 
     // Start the slideshow
     setInterval(nextSlide, slideInterval);
+}
+
+// Parallax effect on hero content
+function initParallax() {
+    const heroContent = document.querySelector('.hero-content');
+    const heroScroll = document.querySelector('.hero-scroll');
+
+    if (!heroContent) return;
+
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * 0.4;
+
+        if (scrolled < window.innerHeight) {
+            heroContent.style.transform = `translateY(${rate}px)`;
+            heroContent.style.opacity = 1 - (scrolled / (window.innerHeight * 0.8));
+
+            if (heroScroll) {
+                heroScroll.style.opacity = 1 - (scrolled / 300);
+            }
+        }
+    });
+}
+
+// Text reveal animation on load
+function initTextReveal() {
+    const heroTitle = document.querySelector('.hero-title');
+    const heroSubtitle = document.querySelector('.hero-subtitle');
+    const heroTagline = document.querySelector('.hero-tagline');
+    const heroCta = document.querySelector('.hero-cta');
+
+    if (heroTagline) {
+        heroTagline.style.opacity = '0';
+        heroTagline.style.transform = 'translateY(30px)';
+        setTimeout(() => {
+            heroTagline.style.transition = 'opacity 1s ease, transform 1s ease';
+            heroTagline.style.opacity = '1';
+            heroTagline.style.transform = 'translateY(0)';
+        }, 300);
+    }
+
+    if (heroTitle) {
+        heroTitle.style.opacity = '0';
+        heroTitle.style.transform = 'translateY(30px)';
+        setTimeout(() => {
+            heroTitle.style.transition = 'opacity 1s ease, transform 1s ease';
+            heroTitle.style.opacity = '1';
+            heroTitle.style.transform = 'translateY(0)';
+        }, 600);
+    }
+
+    if (heroSubtitle) {
+        heroSubtitle.style.opacity = '0';
+        heroSubtitle.style.transform = 'translateY(30px)';
+        setTimeout(() => {
+            heroSubtitle.style.transition = 'opacity 1s ease, transform 1s ease';
+            heroSubtitle.style.opacity = '1';
+            heroSubtitle.style.transform = 'translateY(0)';
+        }, 900);
+    }
+
+    if (heroCta) {
+        heroCta.style.opacity = '0';
+        heroCta.style.transform = 'translateY(30px)';
+        setTimeout(() => {
+            heroCta.style.transition = 'opacity 1s ease, transform 1s ease';
+            heroCta.style.opacity = '1';
+            heroCta.style.transform = 'translateY(0)';
+        }, 1200);
+    }
 }
 
 // Navigation scroll effect
@@ -260,6 +346,50 @@ function initScrollAnimations() {
     document.querySelectorAll('.featured-item, .portfolio-item, .stat-item').forEach(el => {
         el.classList.add('fade-in-element');
         observer.observe(el);
+    });
+}
+
+// Magnetic hover effect on buttons
+function initMagneticButtons() {
+    const buttons = document.querySelectorAll('.btn');
+
+    buttons.forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+        });
+
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = 'translate(0, 0)';
+        });
+    });
+}
+
+// Image tilt effect on gallery and portfolio items
+function initImageTilt() {
+    const items = document.querySelectorAll('.gallery-item, .portfolio-item');
+
+    items.forEach(item => {
+        item.addEventListener('mousemove', (e) => {
+            const rect = item.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateX = (y - centerY) / 20;
+            const rotateY = (centerX - x) / 20;
+
+            item.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+        });
+
+        item.addEventListener('mouseleave', () => {
+            item.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+        });
     });
 }
 
