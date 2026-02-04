@@ -86,6 +86,22 @@ ul {
     align-items: center;
 }
 
+.nav::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    right: 5%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-text-subtle), transparent);
+    opacity: 0;
+    transition: opacity var(--transition-medium);
+}
+
+.nav.scrolled::before {
+    opacity: 1;
+}
+
 .nav-logo {
     font-family: var(--font-display);
     font-size: 1.1rem;
@@ -272,33 +288,33 @@ ul {
 .hero-scroll {
     position: absolute;
     bottom: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.5rem;
     z-index: 10;
 }
 
 .hero-scroll span {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--color-text-muted);
+    color: var(--color-accent);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
 }
 
 .scroll-line {
     width: 1px;
-    height: 40px;
-    background: linear-gradient(to bottom, var(--color-text-muted), transparent);
+    height: 60px;
+    background: linear-gradient(to bottom, var(--color-accent), transparent);
     animation: scrollPulse 2s ease-in-out infinite;
 }
 
 @keyframes scrollPulse {
-    0%, 100% { opacity: 0.3; transform: scaleY(1); }
-    50% { opacity: 1; transform: scaleY(1.2); }
-}
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
 
 /* ===========================================
    Buttons
@@ -631,49 +647,79 @@ ul {
    Stats Counter Section
    =========================================== */
 .stats-section {
-    padding: 6rem 0;
-    background-color: var(--color-bg);
+    padding: 5rem 0;
+    background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-secondary) 50%, var(--color-bg) 100%);
+    border-top: 1px solid var(--color-bg-tertiary);
+    border-bottom: 1px solid var(--color-bg-tertiary);
 }
 
 .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 0;
     text-align: center;
 }
 
 .stat-counter {
-    padding: 2rem;
+    padding: 2rem 3rem;
+    position: relative;
+}
+
+.stat-counter:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 50px;
+    width: 1px;
+    background: var(--color-text-subtle);
 }
 
 .stat-counter .counter {
-    font-size: clamp(3rem, 6vw, 4.5rem);
-    font-weight: 300;
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 400;
     line-height: 1;
     display: inline-block;
+    color: var(--color-accent);
 }
 
 .stat-counter .counter-suffix {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 300;
-    color: var(--color-text-muted);
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 400;
+    color: var(--color-accent);
 }
 
 .stat-counter p {
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--color-text-muted);
-    margin-top: 1rem;
+    margin-top: 0.75rem;
 }
 
 /* ===========================================
    CTA Section
    =========================================== */
 .cta {
-    padding: 10rem 0;
+    padding: 8rem 0;
     text-align: center;
-    background-color: var(--color-bg);
+    background-color: var(--color-bg-secondary);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, var(--color-accent));
 }
 
 .cta h2 {
@@ -692,29 +738,35 @@ ul {
    Footer
    =========================================== */
 .footer {
-    padding: 5rem 0 2rem;
-    background-color: var(--color-bg-secondary);
+    padding: 4rem 0 2rem;
+    background-color: var(--color-bg);
     border-top: 1px solid var(--color-bg-tertiary);
 }
 
 .footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     gap: 4rem;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--color-bg-tertiary);
 }
 
 .footer-brand h3 {
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 0;
+    text-transform: none;
     margin-bottom: 0.5rem;
+    color: var(--color-text);
 }
 
 .footer-brand p {
     color: var(--color-text-muted);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 .footer-links h4,
