@@ -1439,6 +1439,10 @@ ul {
         margin-bottom: 6rem;
     }
 
+    .hero-title {
+        font-size: clamp(1.8rem, 8vw, 3rem);
+    }
+
     .featured-grid {
         grid-template-columns: 1fr;
     }
