@@ -37,6 +37,7 @@ body {
     color: var(--color-text);
     line-height: 1.6;
     overflow-x: hidden;
+    max-width: 100%;
 }
 
 a {
@@ -155,6 +156,7 @@ ul {
 .hero {
     position: relative;
     height: 100vh;
+    height: 100dvh;
     min-height: 700px;
     display: flex;
     align-items: center;
