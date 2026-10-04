@@ -96,11 +96,12 @@ ul {
     letter-spacing: 0.05em;
     text-transform: none;
     font-style: normal;
+    white-space: nowrap;
 }
 
 .nav-menu {
     display: flex;
-    gap: 3rem;
+    gap: clamp(1.25rem, 3vw, 3rem);
 }
 
 .nav-menu a {
@@ -111,6 +112,7 @@ ul {
     color: var(--color-text-muted);
     transition: color var(--transition-fast);
     position: relative;
+    white-space: nowrap;
 }
 
 .nav-menu a::after {
@@ -774,6 +776,141 @@ ul {
     color: var(--color-text-subtle);
 }
 
+.footer-partner {
+    margin-top: 0.5rem;
+}
+
+.footer-partner a {
+    color: var(--color-text-muted);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.footer-partner a:hover {
+    color: var(--color-text);
+}
+
+/* ===========================================
+   Gear Rentals Page
+   =========================================== */
+.gear-page {
+    padding: 10rem 0 4rem;
+    background-color: var(--color-bg);
+}
+
+.gear-intro {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 4rem;
+}
+
+.gear-eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+}
+
+.gear-intro h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+.gear-intro .lead {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+}
+
+.gear-intro .lead a,
+.gear-note a {
+    color: var(--color-text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.gear-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.gear-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-bg-tertiary);
+    transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.gear-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-3px);
+}
+
+.gear-card-image {
+    aspect-ratio: 1;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.gear-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.gear-card-body {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.gear-card-body h3 {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.gear-card-body p {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    flex: 1;
+}
+
+.gear-price {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-accent);
+}
+
+.gear-note {
+    text-align: center;
+    color: var(--color-text-muted);
+    max-width: 640px;
+    margin: 3rem auto 0;
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .gear-page {
+        padding-top: 7rem;
+    }
+
+    .gear-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+    }
+
+    .gear-card-body {
+        padding: 1rem;
+    }
+}
+
 /* ===========================================
    Work Page
    =========================================== */
@@ -1384,6 +1521,21 @@ ul {
 
     .booking-grid {
         gap: 4rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .nav-logo {
+        font-size: 1rem;
+    }
+
+    .nav-menu {
+        gap: 1.25rem;
+    }
+
+    .nav-menu a {
+        font-size: 0.72rem;
+        letter-spacing: 0.03em;
     }
 }
 
