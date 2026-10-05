@@ -813,8 +813,9 @@ ul {
 }
 
 .gear-intro h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(2rem, 4vw, 3.25rem);
     font-weight: 300;
+    line-height: 1.2;
     margin-bottom: 1.5rem;
 }
 
@@ -896,6 +897,62 @@ ul {
     line-height: 1.8;
 }
 
+.gear-teaser {
+    padding: 6rem 0 0;
+    text-align: center;
+    background-color: var(--color-bg);
+}
+
+.gear-teaser p {
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    line-height: 1.8;
+}
+
+.gear-teaser p a {
+    color: var(--color-text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.gear-seo {
+    padding: 4rem 0 2rem;
+    background-color: var(--color-bg);
+}
+
+.gear-seo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4rem;
+    border-top: 1px solid var(--color-bg-tertiary);
+    padding-top: 4rem;
+}
+
+.gear-seo h2 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+.gear-seo p {
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+}
+
+.gear-faq h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+}
+
+.gear-seo a {
+    color: var(--color-text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
 @media (max-width: 768px) {
     .gear-page {
         padding-top: 7rem;
@@ -908,6 +965,11 @@ ul {
 
     .gear-card-body {
         padding: 1rem;
+    }
+
+    .gear-seo-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
     }
 }
 
