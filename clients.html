@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Login | The Full Time Hobby</title>
+    <meta name="description" content="Client galleries from The Full Time Hobby. Enter your gallery password to view and download your photos.">
+    <meta name="robots" content="noindex">
+    <link rel="canonical" href="https://thefulltimehobby.com/clients">
+    <link rel="stylesheet" href="css/style.css?v=6">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">The Full Time Hobby</a>
+            <button class="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="motion.html">Motion</a></li>
+                <li><a href="https://thefulltimehobby.smugmug.com/Printshop" target="_blank" rel="noopener">Printshop</a></li>
+                <li><a href="gear-rentals.html">Gear Rentals</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="clients.html" class="active">Clients</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Client Login -->
+    <section class="client-page">
+        <div class="container">
+            <div class="client-card">
+                <p class="gear-eyebrow">Client Galleries</p>
+                <h1>Client Login</h1>
+                <p class="lead">Enter the password from your delivery email to view your gallery and download your photos.</p>
+                <form class="client-form" method="post" action="https://gallery.thefulltimehobby.com/login">
+                    <label for="client-password" class="visually-hidden">Gallery password</label>
+                    <input id="client-password" type="password" name="password" placeholder="Gallery password" autocomplete="current-password" required autofocus>
+                    <button type="submit" class="btn btn-primary">View My Gallery</button>
+                    <p class="client-error" id="client-error" hidden>That password didn&rsquo;t match a gallery. Check your delivery email, or <a href="contact.html">get in touch</a>.</p>
+                </form>
+                <p class="client-help">Lost your password? <a href="mailto:thefulltimehobby@gmail.com">Email me</a> and I&rsquo;ll resend your link.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>The Full Time Hobby</h3>
+                    <p>Squamish, British Columbia</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="motion.html">Motion</a></li>
+                        <li><a href="https://thefulltimehobby.smugmug.com/Printshop" target="_blank" rel="noopener">Printshop</a></li>
+                        <li><a href="gear-rentals.html">Gear Rentals</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="clients.html">Clients</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://instagram.com/thefulltimehobby" target="_blank" rel="noopener">Instagram</a>
+                        <a href="mailto:thefulltimehobby@gmail.com">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Full Time Hobby. All Rights Reserved.</p>
+                <p class="footer-partner">Camera gear rentals in Squamish &amp; Whistler via <a href="https://rentedlocal.com" target="_blank" rel="noopener">Rented Local</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        if (new URLSearchParams(location.search).has('error')) document.getElementById('client-error').hidden = false;
+    </script>
+</body>
+</html>
