@@ -227,6 +227,7 @@ ul {
 .hero-content {
     position: relative;
     z-index: 10;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
     text-align: left;
     max-width: 800px;
     padding: 0 4rem;
