@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const lbTitle = lightbox.querySelector('.stock-lb-title');
     const lbMeta = lightbox.querySelector('.stock-lb-meta');
     const lbLicense = lightbox.querySelector('.stock-lb-license');
+    const lbPage = lightbox.querySelector('.stock-lb-page');
     let visible = items;
     let current = 0;
 
@@ -30,7 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
         lbImg.src = d.full;
         lbImg.alt = d.title;
         lbTitle.textContent = d.title;
-        lbMeta.textContent = `${d.id} · ${d.category} · Original ${d.size}`;
+        lbMeta.textContent = [d.id, d.location, d.category, `Original ${d.size}`].filter(Boolean).join(' · ');
+        if (lbPage) lbPage.href = d.page;
         const subject = `Stock license: ${d.title} (${d.id})`;
         const body = `Hi Jeremy,\n\nI'd like to license ${d.id} – ${d.title}.\n\nLicense (Web & Social / Commercial / Extended):\nHow and where it will be used:\nCompany:\n\nThanks!`;
         lbLicense.href = `mailto:thefulltimehobby@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -51,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     items.forEach(item => {
         item.tabIndex = 0;
-        item.addEventListener('click', () => open(item));
+        item.addEventListener('click', e => { if (!e.target.closest('a')) open(item); });
         item.addEventListener('keydown', e => {
             if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(item); }
         });

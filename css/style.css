@@ -2517,3 +2517,308 @@ ul {
 .reviews-link a:hover {
     color: var(--color-accent-hover);
 }
+
+/* ===========================================
+   Stock: location links, photo pages, hubs
+   =========================================== */
+.stock-places {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.stock-places-label {
+    width: 100%;
+    text-align: center;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 0.25rem;
+}
+
+.stock-places a {
+    font-size: 0.8rem;
+    color: var(--color-text);
+    border: 1px solid var(--color-bg-tertiary);
+    padding: 0.45rem 0.9rem;
+    transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.stock-places a span {
+    color: var(--color-text-subtle);
+    margin-left: 0.2rem;
+}
+
+.stock-places a:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.stock-places--footer {
+    margin: 4rem 0 0;
+}
+
+.stock-item-title {
+    color: var(--color-text);
+}
+
+.stock-lb-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.photo-page {
+    padding: 8rem 0 5rem;
+}
+
+.photo-crumbs {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-subtle);
+    margin-bottom: 1.5rem;
+}
+
+.photo-crumbs a {
+    color: var(--color-text-muted);
+}
+
+.photo-crumbs a:hover {
+    color: var(--color-accent);
+}
+
+.stock-hub .photo-crumbs {
+    text-align: center;
+}
+
+.photo-hero {
+    margin: 0 0 2.5rem;
+    background: var(--color-bg-secondary);
+    text-align: center;
+}
+
+.photo-hero img {
+    width: auto;
+    max-width: 100%;
+    max-height: 80vh;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.photo-hero figcaption {
+    padding: 0.75rem 1rem;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    background: var(--color-bg);
+}
+
+.photo-info {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: 3rem;
+    align-items: start;
+}
+
+.photo-text h1 {
+    font-size: clamp(1.9rem, 4vw, 2.8rem);
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+}
+
+.photo-loc {
+    color: var(--color-text-muted);
+    margin-bottom: 1.25rem;
+}
+
+.photo-loc a,
+.photo-hubs a {
+    color: var(--color-text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.photo-text .lead {
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.photo-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.photo-note {
+    font-size: 0.85rem;
+    color: var(--color-text-subtle);
+}
+
+.photo-meta {
+    background: var(--color-bg-secondary);
+    padding: 1.75rem;
+}
+
+.photo-details {
+    display: grid;
+    gap: 0.9rem;
+    margin: 0 0 1.5rem;
+}
+
+.photo-details div {
+    display: grid;
+    grid-template-columns: 7.5rem minmax(0, 1fr);
+    gap: 1rem;
+}
+
+.photo-details dt {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    padding-top: 0.15rem;
+}
+
+.photo-details dd {
+    margin: 0;
+    font-size: 0.9rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.photo-tags {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.photo-tags li {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-bg-tertiary);
+    padding: 0.25rem 0.6rem;
+}
+
+.photo-hubs {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.9rem;
+}
+
+.photo-related {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.photo-related h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+.photo-related .btn {
+    margin-top: 2rem;
+}
+
+.photo-grid {
+    --row: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    text-align: left;
+}
+
+.photo-grid::after {
+    content: '';
+    flex-grow: 999;
+}
+
+.photo-grid--hub {
+    --row: 260px;
+    gap: 0.75rem;
+}
+
+.photo-card {
+    position: relative;
+    flex: calc(var(--r) * 100) 1 calc(var(--r) * var(--row));
+    overflow: hidden;
+    background: var(--color-bg-secondary);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform var(--transition-slow);
+}
+
+.photo-card-text {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 2rem 0.9rem 0.75rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity var(--transition-medium);
+}
+
+.photo-card-title {
+    font-size: 0.9rem;
+    color: var(--color-text);
+}
+
+.photo-card-loc {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+}
+
+.photo-card:hover img,
+.photo-card:focus-visible img {
+    transform: scale(1.03);
+}
+
+.photo-card:hover .photo-card-text,
+.photo-card:focus-visible .photo-card-text {
+    opacity: 1;
+}
+
+@media (hover: none) {
+    .photo-card-text,
+    .stock-item figcaption {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 900px) {
+    .photo-info {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .photo-page {
+        padding-top: 6.5rem;
+    }
+
+    .photo-grid,
+    .photo-grid--hub {
+        --row: 130px;
+    }
+}
