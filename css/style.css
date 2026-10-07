@@ -1932,15 +1932,25 @@ ul {
     color: var(--color-bg);
 }
 
+/* Justified rows: each photo grows in proportion to its aspect ratio
+   (--r), so every row shares one height and the colour order reads
+   left to right. */
 .stock-grid {
-    columns: 3 320px;
-    column-gap: 1rem;
+    --row: 260px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.stock-grid::after {
+    content: '';
+    flex-grow: 999;
 }
 
 .stock-item {
     position: relative;
-    break-inside: avoid;
-    margin: 0 0 1rem;
+    flex: calc(var(--r) * 100) 1 calc(var(--r) * var(--row));
+    margin: 0;
     overflow: hidden;
     cursor: zoom-in;
     background: var(--color-bg-secondary);
@@ -2138,6 +2148,11 @@ ul {
 .stock-lb-nav.next { right: 0.5rem; }
 
 @media (max-width: 768px) {
+    .stock-grid {
+        --row: 150px;
+        gap: 0.5rem;
+    }
+
     .stock-item figcaption {
         opacity: 1;
         padding: 2rem 0.75rem 0.6rem;
