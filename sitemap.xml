@@ -1988,4 +1988,28 @@
     <priority>0.7</priority>
     <changefreq>yearly</changefreq>
   </url>
+  <url>
+    <loc>https://thefulltimehobby.com/blog</loc>
+    <lastmod>2026-10-07</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://thefulltimehobby.com/blog-northern-lights-squamish-whistler</loc>
+    <lastmod>2026-10-07</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://thefulltimehobby.com/blog-squamish-adventure-photography</loc>
+    <lastmod>2026-10-07</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://thefulltimehobby.com/blog-sea-to-sky-landscape-photography</loc>
+    <lastmod>2026-10-07</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>
