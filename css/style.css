@@ -2085,18 +2085,6 @@ ul {
     user-select: none;
 }
 
-.stock-lb-watermark {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: clamp(1rem, 3vw, 2rem);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.22);
-    pointer-events: none;
-}
 
 .stock-lb-info {
     display: flex;
