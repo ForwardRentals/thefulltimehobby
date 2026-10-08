@@ -3047,3 +3047,10 @@ ul {
 @media (prefers-reduced-motion: reduce) {
     .back-to-top { transition: none; }
 }
+
+.photo-facts {
+    font-size: 0.9rem;
+    color: var(--color-text-subtle);
+    line-height: 1.7;
+    margin: -1rem 0 2rem;
+}
