@@ -4017,4 +4017,12 @@
       <image:loc>https://thefulltimehobby.com/images/stock/red-jacket-on-the-granite.jpg</image:loc>
     </image:image>
   </url>
+  <url>
+    <loc>https://thefulltimehobby.com/stock/hidden-hut-in-the-snow</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://thefulltimehobby.com/images/stock/hidden-hut-in-the-snow.jpg</image:loc>
+    </image:image>
+  </url>
 </urlset>

@@ -2294,6 +2294,11 @@
    "loc": "Zen Garden, near Shannon Falls, Squamish, BC",
    "note": "From Nick McNutt's session on Zen Garden, his new climb near Shannon Falls in Squamish.",
    "id": "TFTH-500"
+  },
+  "hidden-hut-in-the-snow": {
+   "loc": "Duffey Lake Provincial Park, BC",
+   "note": null,
+   "id": "TFTH-501"
   }
  },
  "remove": [
