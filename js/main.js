@@ -434,3 +434,21 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Stock image protection: block right-click, drag, and mobile long-press "Save image"
+(function () {
+    const isStockImg = el => el && el.tagName === 'IMG' && /images\/stock\//.test(el.getAttribute('src') || '');
+    const css = document.createElement('style');
+    css.textContent = `img[src*="images/stock/"] {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-user-drag: none;
+    }`;
+    document.head.appendChild(css);
+    document.addEventListener('contextmenu', e => { if (isStockImg(e.target)) e.preventDefault(); }, true);
+    document.addEventListener('dragstart', e => { if (isStockImg(e.target)) e.preventDefault(); }, true);
+    const lock = () => document.querySelectorAll('img[src*="images/stock/"]').forEach(img => img.setAttribute('draggable', 'false'));
+    lock();
+    new MutationObserver(lock).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['src'] });
+})();
