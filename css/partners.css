@@ -1,0 +1,20 @@
+/* Local partner backlinks: homepage section + Squamish Water Taxi page */
+.local-biz { padding: 5rem 0; background: var(--color-bg); }
+.local-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+.local-card { background: var(--color-bg-secondary, #141414); border: 1px solid var(--color-bg-tertiary, #222); border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; }
+.local-card .local-img { display: block; aspect-ratio: 4 / 3; overflow: hidden; }
+.local-card .local-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+.local-card:hover .local-img img { transform: scale(1.04); }
+.local-strip { display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; gap: 3px; aspect-ratio: 4 / 3; }
+.local-strip a { display: block; overflow: hidden; }
+.local-strip a:first-child { grid-row: 1 / 3; }
+.local-strip img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.local-body { padding: 1.4rem 1.5rem 1.6rem; display: flex; flex-direction: column; gap: .6rem; flex: 1; }
+.local-body h3 { font-size: 1.15rem; font-weight: 500; margin: 0; }
+.local-body p { font-size: .92rem; line-height: 1.6; color: var(--color-text-muted); margin: 0; }
+.local-links { margin-top: auto; padding-top: .6rem; display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; font-size: .85rem; }
+.local-links a { color: var(--color-text); text-decoration: underline; text-underline-offset: 3px; }
+.local-links a:hover { color: var(--color-text-muted); }
+.local-built { text-align: center; margin-top: 2.5rem; font-size: .85rem; color: var(--color-text-subtle); }
+.local-built a { color: var(--color-text-muted); text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 900px) { .local-grid { grid-template-columns: 1fr; } }
