@@ -4053,6 +4053,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://thefulltimehobby.com/finch-drive-townhomes-photography</loc>
+    <lastmod>2026-11-18</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://thefulltimehobby.com/images/services/finch-aerial-valley-road.webp</image:loc>
+      <image:title>Finch Drive townhomes above the Squamish valley, aerial</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://thefulltimehobby.com/images/services/finch-living-room.webp</image:loc>
+      <image:title>Finch Drive townhome show home living room, Squamish</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://thefulltimehobby.com/images/services/finch-kitchen-island.webp</image:loc>
+      <image:title>Finch Drive townhome kitchen island, Squamish</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://thefulltimehobby.com/real-estate-photography</loc>
     <lastmod>2026-11-18</lastmod>
     <priority>0.9</priority>
