@@ -584,6 +584,7 @@
 }
     </script>
     <link rel="stylesheet" href="css/style.css?v=12">
+    <link rel="stylesheet" href="css/nav.css?v=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -599,14 +600,30 @@
                 <span></span>
             </button>
             <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
                 <li><a href="motion.html">Motion</a></li>
-                <li><a href="https://thefulltimehobby.smugmug.com/Printshop" target="_blank" rel="noopener">Printshop</a></li>
+                <li class="has-sub">
+                    <a href="index.html#projects">Stills</a>
+                    <button class="sub-toggle" type="button" aria-label="Show Stills menu" aria-expanded="false" aria-haspopup="true"></button>
+                    <ul class="sub-menu">
+                        <li><a href="index.html#projects">Featured Projects</a></li>
+                        <li><a href="index.html#fine-art">Fine Art</a></li>
+                        <li><a href="https://thefulltimehobby.smugmug.com/Printshop" target="_blank" rel="noopener">Printshop</a></li>
+                    </ul>
+                </li>
                 <li><a href="stock.html" class="active">Stock</a></li>
-                <li><a href="gear-rentals.html">Gear Rentals</a></li>
+                <li class="has-sub">
+                    <a href="real-estate-photography.html">Services</a>
+                    <button class="sub-toggle" type="button" aria-label="Show Services menu" aria-expanded="false" aria-haspopup="true"></button>
+                    <ul class="sub-menu">
+                        <li><a href="real-estate-photography.html">Real Estate Photography</a></li>
+                        <li><a href="drone-photography.html">Drone Photography</a></li>
+                        <li><a href="gear-rentals.html">Camera Gear Rentals</a></li>
+                        <li><a href="real-estate-drone-photography-sea-to-sky.html">Service Areas</a></li>
+                    </ul>
+                </li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="clients.html">Clients</a></li>
+                <li><a href="clients.html" class="nav-cta">Client Login</a></li>
             </ul>
         </div>
     </nav>
@@ -665,5 +682,6 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/nav.js"></script>
 </body>
 </html>

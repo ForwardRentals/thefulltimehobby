@@ -1,0 +1,250 @@
+/* ===========================================
+   Navigation (loaded after style.css; owns all nav styling)
+   Desktop: logo + 7 items with two dropdowns.
+   Below 1000px: hamburger with accordion sub-menus.
+   =========================================== */
+
+.nav-container {
+    gap: 2.5rem;
+}
+
+.nav-logo {
+    flex: 0 0 auto;
+    margin-right: auto;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: clamp(1.1rem, 2.1vw, 2.25rem);
+    list-style: none;
+}
+
+.nav-menu > li {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu a,
+.nav-menu .sub-toggle {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+}
+
+/* Readability over the homepage hero (nav is transparent until you scroll) */
+.nav:not(.scrolled) {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.35) 60%, rgba(0, 0, 0, 0) 100%);
+}
+.nav:not(.scrolled) .nav-logo,
+.nav:not(.scrolled) .nav-menu > li > a,
+.nav:not(.scrolled) .sub-toggle {
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
+}
+.nav:not(.scrolled) .nav-menu > li > a {
+    color: #e9e9e9;
+}
+
+/* Dropdown trigger caret */
+.sub-toggle {
+    background: none;
+    border: 0;
+    cursor: pointer;
+    color: var(--color-text-muted);
+    padding: 0.35rem 0 0.35rem 0.4rem;
+    display: inline-flex;
+    align-items: center;
+    font-family: inherit;
+}
+.sub-toggle::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg) translateY(-2px);
+    transition: transform var(--transition-fast);
+}
+.has-sub.open > .sub-toggle::before,
+.has-sub:hover > .sub-toggle::before {
+    transform: rotate(225deg) translateY(-1px);
+}
+.has-sub:hover > .sub-toggle,
+.has-sub.open > .sub-toggle {
+    color: var(--color-text);
+}
+
+/* Dropdown panel */
+.sub-menu {
+    list-style: none;
+    position: absolute;
+    top: calc(100% + 1rem);
+    left: -1.1rem;
+    min-width: 250px;
+    padding: 0.5rem;
+    background: rgba(14, 14, 14, 0.98);
+    border: 1px solid #262626;
+    border-radius: 6px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
+    transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--transition-fast);
+}
+/* hover bridge so the panel doesn't close crossing the gap */
+.sub-menu::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -1.1rem;
+    height: 1.1rem;
+}
+.has-sub:hover > .sub-menu,
+.has-sub:focus-within > .sub-menu,
+.has-sub.open > .sub-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+}
+.sub-menu a {
+    display: block;
+    padding: 0.7rem 0.9rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+}
+.sub-menu a::after {
+    display: none;
+}
+.sub-menu a:hover,
+.sub-menu a.active {
+    background: #1c1c1c;
+    color: var(--color-text);
+}
+
+/* Client login as a quiet pill */
+.nav-menu .nav-cta {
+    border: 1px solid #3a3a3a;
+    border-radius: 999px;
+    padding: 0.45rem 1.05rem;
+    color: var(--color-text);
+}
+.nav-menu .nav-cta::after {
+    display: none;
+}
+.nav-menu .nav-cta:hover,
+.nav-menu .nav-cta.active {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+/* Anchor targets sit below the fixed nav */
+#projects,
+#fine-art {
+    scroll-margin-top: 90px;
+}
+
+/* ------- Hamburger below 1000px ------- */
+@media (max-width: 1000px) {
+    .nav-toggle {
+        display: flex;
+        z-index: 1001;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        background-color: var(--color-bg);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        gap: 0;
+        padding: 6rem 2rem 3rem;
+        overflow-y: auto;
+        transition: right var(--transition-medium);
+    }
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-menu > li {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        border-bottom: 1px solid #1d1d1d;
+    }
+    .nav-menu a,
+    .nav-menu .sub-toggle {
+        font-size: 1.15rem;
+        letter-spacing: 0.06em;
+    }
+    .nav-menu > li > a {
+        flex: 1;
+        padding: 1.05rem 0;
+        color: var(--color-text);
+        text-shadow: none;
+    }
+    .nav-menu > li > a::after {
+        display: none;
+    }
+    .nav-menu .sub-toggle {
+        padding: 1.05rem 0.5rem 1.05rem 1.5rem;
+    }
+    .nav-menu .sub-toggle::before {
+        width: 9px;
+        height: 9px;
+    }
+
+    .sub-menu {
+        position: static;
+        flex-basis: 100%;
+        min-width: 0;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+        padding: 0 0 0.75rem 1rem;
+    }
+    .sub-menu::before {
+        display: none;
+    }
+    .has-sub.open > .sub-menu {
+        display: block;
+    }
+    .has-sub:hover > .sub-menu:not(:focus-within) {
+        /* disable hover-open on touch layouts; use the caret */
+    }
+    .sub-menu a {
+        font-size: 1rem;
+        padding: 0.8rem 0.5rem;
+        color: var(--color-text-muted);
+    }
+
+    .nav-menu .nav-cta {
+        align-self: flex-start;
+        margin-top: 1.5rem;
+        font-size: 1rem;
+        padding: 0.7rem 1.4rem;
+    }
+    .nav-menu > li:last-child {
+        border-bottom: 0;
+    }
+
+    .nav:not(.scrolled) {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+}
+
+@media (max-width: 420px) {
+    .nav-container { gap: 1rem; }
+    .nav-logo { font-size: 1rem; }
+}
