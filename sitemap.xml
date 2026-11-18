@@ -4221,4 +4221,22 @@
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://thefulltimehobby.com/blog-photographing-squamish-estuary-canoe-howe-sound</loc>
+    <lastmod>2026-11-18</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://thefulltimehobby.com/blog-mountain-bike-photography-squamish-whistler</loc>
+    <lastmod>2026-11-18</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://thefulltimehobby.com/blog-photographing-stawamus-chief-squamish</loc>
+    <lastmod>2026-11-18</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>
