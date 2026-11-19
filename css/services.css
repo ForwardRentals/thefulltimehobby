@@ -422,3 +422,26 @@
 @media (max-width: 760px) {
     .svc-teaser-grid { grid-template-columns: 1fr; }
 }
+
+/* Video grid (videography / short film pages) */
+.svc-videos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+.svc-video {
+    background: var(--color-bg-secondary);
+    border: 1px solid #262626;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.svc-section.alt .svc-video { background: var(--color-bg); }
+.svc-video .video-embed iframe { border: 0; }
+@media (max-width: 760px) {
+    .svc-videos { grid-template-columns: 1fr; }
+}
+
+/* Services hub grid */
+.svc-hub-grid { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 1100px) { .svc-hub-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 760px) { .svc-hub-grid { grid-template-columns: 1fr; } }
